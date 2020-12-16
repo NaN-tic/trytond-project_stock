@@ -1,0 +1,31 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:project.work,addition_moves:"
+msgid "Addition Moves"
+msgstr "Moviments d'agregació"
+
+msgctxt "field:project.work,location:"
+msgid "Location"
+msgstr "Ubicació"
+
+msgctxt "field:project.work,moves:"
+msgid "Moves"
+msgstr "Moviments"
+
+msgctxt "field:project.work,project_location:"
+msgid "Location"
+msgstr "Ubicació"
+
+msgctxt "field:project.work,removal_moves:"
+msgid "Removal Moves"
+msgstr "Moviments d'eliminació"
+
+msgctxt "field:project.work,supply_locations:"
+msgid "Output Locations"
+msgstr "Ubicacions de sortida"
+
+msgctxt "field:stock.shipment.out,project:"
+msgid "Project"
+msgstr "Projecte"
