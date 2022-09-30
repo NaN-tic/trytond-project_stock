@@ -147,6 +147,7 @@ Create stock move::
     >>> move.product = good_product
     >>> move.quantity = 5
     >>> move.unit_price = Decimal(0)
+    >>> move.currency = company.currency
     >>> move.save()
     >>> task.reload()
 
