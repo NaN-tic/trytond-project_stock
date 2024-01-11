@@ -14,20 +14,20 @@ class Project(metaclass=PoolMeta):
                 ('from_location', 'in', Eval('supply_locations')),
                 ('to_location', '=', Eval('location')),
                 ('company', '=', Eval('company')),
-                ], depends=['supply_locations', 'location', 'company']),
+                ]),
         'get_moves', setter='set_moves')
     removal_moves = fields.Function(fields.One2Many('stock.move', 'origin',
             'Removal Moves', domain=[
                 ('from_location', '=', Eval('location')),
                 ('to_location', 'in', Eval('supply_locations')),
                 ('company', '=', Eval('company')),
-                ], depends=['location', 'supply_locations', 'company']),
+                ]),
         'get_moves', setter='set_moves')
     # TODO: project_location should become readonly once there are moves in any
     # of the child projects. Or raise an error when trying to change it.
     project_location = fields.Many2One('stock.location', 'Location', states={
             'invisible': Eval('type') != 'project',
-            }, depends=['type'])
+            })
     location = fields.Function(fields.Many2One('stock.location', 'Location'),
         'on_change_with_location')
 
