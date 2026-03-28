@@ -11,16 +11,16 @@ class Project(metaclass=PoolMeta):
             None, 'Output Locations'), 'on_change_with_supply_locations')
     addition_moves = fields.Function(fields.One2Many('stock.move', 'origin',
             'Addition Moves', domain=[
-                ('from_location', 'in', Eval('supply_locations')),
-                ('to_location', '=', Eval('location')),
-                ('company', '=', Eval('company')),
+                ('from_location', 'in', Eval('supply_locations', [])),
+                ('to_location', '=', Eval('location', -1)),
+                ('company', '=', Eval('company', -1)),
                 ]),
         'get_moves', setter='set_moves')
     removal_moves = fields.Function(fields.One2Many('stock.move', 'origin',
             'Removal Moves', domain=[
-                ('from_location', '=', Eval('location')),
-                ('to_location', 'in', Eval('supply_locations')),
-                ('company', '=', Eval('company')),
+                ('from_location', '=', Eval('location', -1)),
+                ('to_location', 'in', Eval('supply_locations', [])),
+                ('company', '=', Eval('company', -1)),
                 ]),
         'get_moves', setter='set_moves')
     # TODO: project_location should become readonly once there are moves in any
